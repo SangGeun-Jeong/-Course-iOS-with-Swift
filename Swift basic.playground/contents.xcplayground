@@ -10,10 +10,15 @@
         <page name='클래스'/>
         <page name='초기화 구문'/>
         <page name='프로퍼티'/>
+        <page name='클래스와 구조체의 차이'/>
+        <page name='상속'/>
+        <page name='타입 캐스팅'/>
+        <page name='Assert &amp; Guard'/>
+        <page name='Protocal'/>
+        <page name='Extension'/>
         <page name='기본 데이터 타입'/>
         <page name='상수와 변수'/>
         <page name='컬렉션 타입'/>
-        <page name='클래스와 구조체의 차이'/>
-        <page name='상속'/>
+        <page name='열거형'/>
     </pages>
 </playground>
