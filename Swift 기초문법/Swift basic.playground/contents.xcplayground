@@ -19,10 +19,11 @@
         <page name='열거형'/>
         <page name='옵셔널 체이닝'/>
         <page name='try-catch'/>
-        <page name='기본 데이터 타입'/>
-        <page name='상수와 변수'/>
-        <page name='컬렉션 타입'/>
         <page name='클로저'/>
-        <page name='고차함수'/>
+        <page name='고차함수'/>
+        <page name='01.상수와 변수'/>
+        <page name='02.기본 데이터 타입'/>
+        <page name='TestPage'/>
+        <page name='03.컬렉션 타입'/>
     </pages>
 </playground>
