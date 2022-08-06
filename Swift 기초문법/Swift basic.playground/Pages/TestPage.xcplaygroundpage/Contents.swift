@@ -1,39 +1,38 @@
 import UIKit
 
-var numbers: Array<Int> = Array<Int>()
-numbers.append(1)
-numbers.append(2)
-var numbers2 = [Int]()
-var numbers3: [Int] = []
-numbers2.append(3)
+for i in 1...4 {
+	print(i)
+}
 
-numbers.remove(at: 0)
-numbers
+var someArray: [Int] = []
+let someArray2: Array<String> = Array<String>()
+let someArray3 = [String]()
 
-numbers.removeAll()
+someArray
+someArray2
+someArray3
 
-var dic: Dictionary<String, Int> = Dictionary<String, Int>()
-dic
-var dic2: [String: Int] = [:]
-dic2
+someArray = [10,20,30,40,50]
 
-var dic3: [String: Int] = ["Swift" : 1]
-dic3
-dic3["java"] = 2
-dic3["python"] = 3
-dic3
+let array = [1,2,3,4,10,20,30,40]
+for i in array {
+	print(i)
+}
 
-dic3["Swift"] = 4
-dic3
+var number = 5
 
-dic3.removeValue(forKey: "python")
-dic3
+while number < 10 {
+	number += 1
+}
 
-var set: Set = Set<Int>()
-set
-set.insert(10)
-set.insert(20)
-set
-set.remove(20)
-set
+number
+
+var number2 = 10
+
+repeat {
+	number2 *= 10
+} while number2 < 5
+					
+number2
+
 

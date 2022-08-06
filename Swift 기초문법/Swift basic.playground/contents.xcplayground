@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <playground version='6.0' target-platform='ios' buildActiveScheme='true' importAppTypes='true'>
     <pages>
-        <page name='함수 사용법'/>
-        <page name='조건문'/>
-        <page name='반복문'/>
+        <page name='04.함수 사용법'/>
+        <page name='05.조건문'/>
+        <page name='06.반복문'/>
         <page name='옵셔널'/>
         <page name='옵셔널 바인딩'/>
         <page name='구조체'/>
