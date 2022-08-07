@@ -1,33 +1,33 @@
 import UIKit
 
-var number: Int? = 3
-print(number)
-
-var number2: Int?
-print(number2)
-
-if let result = number {
-	print(result)
-} else {
-	print("nill")
+class User {
+	var nickname: String
+	var age: Int
+	
+	init(nickname: String, age: Int){
+		self.nickname = nickname
+		self.age = age
+	}
+	
+	init(age: Int) {
+		self.nickname = "Albert"
+		self.age = age
+	}
+	
+	deinit{
+		print("deinit user")
+	}
 }
 
-func test(){
-	let number: Int? = 5
-	guard let result = number else { return }
-	print(result)
-}
+var user = User(nickname: "toproot", age: 27)
+user.nickname
+user.age
 
-test()
+var user2 = User(age: 25)
+user2.nickname
+user2.age
 
-let value: Int? = 6
-if value == 6 {
-	print("value가 6입니다.")
-} else {
-	print("value가 6이 아닙니다.")
-}
+var user3: User? = User(age: 23)
+user3 = nil
 
-let string = "12"
 
-var stringToInt: Int! = Int(string)
-print(stringToInt + 1)
