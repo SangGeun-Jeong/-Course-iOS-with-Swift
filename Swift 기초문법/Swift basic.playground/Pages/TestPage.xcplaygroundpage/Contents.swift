@@ -1,38 +1,33 @@
 import UIKit
 
-for i in 1...4 {
-	print(i)
+var number: Int? = 3
+print(number)
+
+var number2: Int?
+print(number2)
+
+if let result = number {
+	print(result)
+} else {
+	print("nill")
 }
 
-var someArray: [Int] = []
-let someArray2: Array<String> = Array<String>()
-let someArray3 = [String]()
-
-someArray
-someArray2
-someArray3
-
-someArray = [10,20,30,40,50]
-
-let array = [1,2,3,4,10,20,30,40]
-for i in array {
-	print(i)
+func test(){
+	let number: Int? = 5
+	guard let result = number else { return }
+	print(result)
 }
 
-var number = 5
+test()
 
-while number < 10 {
-	number += 1
+let value: Int? = 6
+if value == 6 {
+	print("value가 6입니다.")
+} else {
+	print("value가 6이 아닙니다.")
 }
 
-number
+let string = "12"
 
-var number2 = 10
-
-repeat {
-	number2 *= 10
-} while number2 < 5
-					
-number2
-
-
+var stringToInt: Int! = Int(string)
+print(stringToInt + 1)
