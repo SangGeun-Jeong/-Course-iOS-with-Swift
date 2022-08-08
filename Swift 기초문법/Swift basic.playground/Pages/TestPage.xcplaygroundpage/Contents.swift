@@ -1,33 +1,33 @@
-import UIKit
+import Foundation
 
-class User {
-	var nickname: String
-	var age: Int
+struct Dog {
+	var name: String
+	let gender: String
+}
+
+var dog = Dog(name: "bow", gender: "male")
+print(dog)
+
+dog.name = "wow"
+print(dog)
+
+let dog2 = Dog(name: "bowwow", gender: "female")
+print(dog2)
+
+class Cat {
+	var name: String
+	let gender: String
 	
-	init(nickname: String, age: Int){
-		self.nickname = nickname
-		self.age = age
-	}
-	
-	init(age: Int) {
-		self.nickname = "Albert"
-		self.age = age
-	}
-	
-	deinit{
-		print("deinit user")
+	init(name: String, gender: String) {
+		self.name = name
+		self.gender = gender
 	}
 }
 
-var user = User(nickname: "toproot", age: 27)
-user.nickname
-user.age
+let cat = Cat(name: "navy", gender: "female")
+cat.name = "navy2"
+print(cat.name)
 
-var user2 = User(age: 25)
-user2.nickname
-user2.age
-
-var user3: User? = User(age: 23)
-user3 = nil
-
-
+struct Stock {
+	
+}
