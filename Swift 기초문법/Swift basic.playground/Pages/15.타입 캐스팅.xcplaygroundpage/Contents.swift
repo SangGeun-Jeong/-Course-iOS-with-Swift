@@ -1,5 +1,12 @@
 import Foundation
 
+// 인스턴스의 타입을 확인하거나 어떠한 클래스의 인스턴스를 해당 클래스 계층 구조의
+// 슈퍼 클래스나 서브 클래스로 취급 하는 방법.
+
+// is, as 연산자로 구현
+// 값의 타입을 확인하거나, 다른 값으로 변환하는 데 사용.
+
+
 class MediaItem {
 	var name: String
 	init(name: String) {
@@ -24,6 +31,7 @@ class Song: MediaItem {
 }
 
 let library = [
+	// instance
 	Movie(name: "기생충", director: "봉준호"),
 	Song(name: "Butter", artist: "BTS"),
 	Movie(name: "올드보이", director: "박찬욱"),
@@ -55,3 +63,6 @@ for item in library {
 		print("Song: \(song.name), by \(song.artist)")
 	}
 }
+
+// as? >> 항상 성공할 것이라고 예상 가능할 때만 사용.
+// 에러가 발생하면 run time error 로 프로그램 강제종료.
