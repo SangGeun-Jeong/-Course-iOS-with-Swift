@@ -1,56 +1,38 @@
-import Foundation
+import UIKit
 
-class Vehicle {
-	var currentSpeed = 0.0
-	var description: String {
-		return "traveling at \(currentSpeed) miles per hour"
-	}
-	func makeNoise() {
-		print("Speaker On!")
-	}
-}
+var numbers: Array<Int> = Array<Int>()
+numbers.append(1)
+numbers.append(2)
 
-class Bicycle: Vehicle {
-	var hasBasket = false
-}
+numbers
+numbers[0]
 
-var bicycle = Bicycle()
-bicycle.currentSpeed
-bicycle.currentSpeed = 15
-bicycle.currentSpeed
+numbers.insert(4, at: 2)
+numbers
 
+numbers.remove(at: 1)
+numbers
 
-class Train: Vehicle {
-	override func makeNoise() {
-		super.makeNoise()
-		print("Choo~Choo!")
-	}
-}
+var names = [String]()
+var names2: [String] = []
 
-let train = Train()
-train.makeNoise()
+var dic: Dictionary<String, Int> = Dictionary<String, Int>()
+var dic2: [String: Int] = [:]
+var dic3: [String: Int] = ["Swift":1]
+dic3["Java"] = 3
+dic3["c"] = 4
+dic3
 
-class Car: Vehicle {
-	var gear = 1
-	override var description: String {
-		return super.description + "in gear \(gear)"
-	}
-}
+dic3["c"] = 7
+dic3
 
-let car = Car()
-car.currentSpeed = 30.0
-car.gear = 2
-print(car.description)
+dic3.removeValue(forKey: "c")
+dic3
 
-class AutomaticCar: Car {
-	override var currentSpeed: Double {
-		didSet {
-			gear = Int(currentSpeed / 10) + 1
-		}
-	}
-}
+var set: Set = Set<Int>()
+set.insert(10)
+set.insert(20)
+set
 
-let automatic = AutomaticCar()
-automatic.currentSpeed = 35.0
-print("AutomaticCar: \(automatic.description)")
-
+set.remove(20)
+set
