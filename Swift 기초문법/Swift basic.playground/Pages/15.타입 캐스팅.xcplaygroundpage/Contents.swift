@@ -43,7 +43,7 @@ let library = [
 var movieCount = 0
 var songCount = 0
 
-// is 연산자를 통해서 인스턴스의 타입을 확인할 수 있음.
+// is 연산자를 통해서 인스턴스의 타입을 확인할 수 있음.(Song or Movie)
 for item in library {
 	if item is Movie {
 		movieCount += 1
@@ -51,6 +51,9 @@ for item in library {
 		songCount += 1
 	}
 }
+
+movieCount
+songCount
 
 print("Media library contains \(movieCount) movies and \(songCount) songs")
 
@@ -64,5 +67,5 @@ for item in library {
 	}
 }
 
-// as? >> 항상 성공할 것이라고 예상 가능할 때만 사용.
+// as! >> 항상 성공할 것이라고 예상 가능할 때만 사용.
 // 에러가 발생하면 run time error 로 프로그램 강제종료.
