@@ -1,38 +1,71 @@
-import UIKit
+import Foundation
 
-var numbers: Array<Int> = Array<Int>()
-numbers.append(1)
-numbers.append(2)
+// 인스턴스의 타입을 확인하거나 어떠한 클래스의 인스턴스를 해당 클래스 계층 구조의
+// 슈퍼 클래스나 서브 클래스로 취급 하는 방법.
 
-numbers
-numbers[0]
+// is, as 연산자로 구현
+// 값의 타입을 확인하거나, 다른 값으로 변환하는 데 사용.
 
-numbers.insert(4, at: 2)
-numbers
 
-numbers.remove(at: 1)
-numbers
+class MediaItem {
+	var name: String
+	init(name: String) {
+		self.name = name
+	}
+}
 
-var names = [String]()
-var names2: [String] = []
+class Movie: MediaItem {
+	var director: String
+	init(name: String, director: String) {
+		self.director = director
+		super.init(name: name)
+	}
+}
 
-var dic: Dictionary<String, Int> = Dictionary<String, Int>()
-var dic2: [String: Int] = [:]
-var dic3: [String: Int] = ["Swift":1]
-dic3["Java"] = 3
-dic3["c"] = 4
-dic3
+class Song: MediaItem {
+	var artist: String
+	init(name: String, artist: String) {
+		self.artist = artist
+		super.init(name: name)
+	}
+}
 
-dic3["c"] = 7
-dic3
+let library = [
+	// instance
+	Movie(name: "기생충", director: "봉준호"),
+	Song(name: "Butter", artist: "BTS"),
+	Movie(name: "올드보이", director: "박찬욱"),
+	Song(name: "Wonderwall", artist: "Oasis"),
+	Song(name: "Rain", artist: "이적"),
+]
 
-dic3.removeValue(forKey: "c")
-dic3
 
-var set: Set = Set<Int>()
-set.insert(10)
-set.insert(20)
-set
+var movieCount = 0
+var songCount = 0
 
-set.remove(20)
-set
+// is 연산자를 통해서 인스턴스의 타입을 확인할 수 있음.(Song or Movie)
+for item in library {
+	if item is Movie {
+		movieCount += 1
+	} else if item is Song {
+		songCount += 1
+	}
+}
+
+movieCount
+songCount
+
+print("Media library contains \(movieCount) movies and \(songCount) songs")
+
+// as? as!, 서브클래스(Movie, Song) 타입으로 다운캐스팅 형변환을 할 수 있음.
+// 다운캐스팅이 되면 접근이 가능해짐.
+for item in library {
+	if let movie = item as? Movie { // 조건부 형식 다운캐스팅
+		print("Movie: \(movie.name), dir. \(movie.director)")
+	} else if let song = item as? Song {
+		print("Song: \(song.name), by \(song.artist)")
+	}
+}
+
+// as! >> 항상 성공할 것이라고 예상 가능할 때만 사용.
+// 에러가 발생하면 run time error 로 프로그램 강제종료.
