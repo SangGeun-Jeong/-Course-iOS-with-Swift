@@ -1,71 +1,35 @@
 import Foundation
 
-// 인스턴스의 타입을 확인하거나 어떠한 클래스의 인스턴스를 해당 클래스 계층 구조의
-// 슈퍼 클래스나 서브 클래스로 취급 하는 방법.
 
-// is, as 연산자로 구현
-// 값의 타입을 확인하거나, 다른 값으로 변환하는 데 사용.
+// assert 는 디버깅 중 조건의 검증을 위해 사용
+var value = 0
+assert(value == 0)
+
+// value = 2
+// assert(value == 0, "값이 0이 아닙니다.") // Fail -> 메세지와 함께, runtime error
+// __lldb_expr_1/16.Assert_Guard.xcplaygroundpage:9: Assertion failed: 값이 0이 아닙니다.
 
 
-class MediaItem {
-	var name: String
-	init(name: String) {
-		self.name = name
-	}
+/*
+ guard 조건 else {
+	// 조건이 false 이면 else 구문이 실행되고
+	return or throw or break를 통해 이 후 코드를 실행하지 않도록 한다.
+ }
+ */
+// guard문으로 Optional binding 가능
+// guard문을 활용해 Optional을 조건문 범위 밖에서도 사용할 수 있음.
+
+//func guardTest(value: Int) {
+//	guard value == 0 else { return }
+//	print("안녕하세요")
+//}
+//
+//guardTest(value: 0)
+
+func guardTest(value: Int?) { // Int? -> Optional Binding
+	guard let value = value else { return }
+	print(value)
 }
 
-class Movie: MediaItem {
-	var director: String
-	init(name: String, director: String) {
-		self.director = director
-		super.init(name: name)
-	}
-}
-
-class Song: MediaItem {
-	var artist: String
-	init(name: String, artist: String) {
-		self.artist = artist
-		super.init(name: name)
-	}
-}
-
-let library = [
-	// instance
-	Movie(name: "기생충", director: "봉준호"),
-	Song(name: "Butter", artist: "BTS"),
-	Movie(name: "올드보이", director: "박찬욱"),
-	Song(name: "Wonderwall", artist: "Oasis"),
-	Song(name: "Rain", artist: "이적"),
-]
-
-
-var movieCount = 0
-var songCount = 0
-
-// is 연산자를 통해서 인스턴스의 타입을 확인할 수 있음.(Song or Movie)
-for item in library {
-	if item is Movie {
-		movieCount += 1
-	} else if item is Song {
-		songCount += 1
-	}
-}
-
-movieCount
-songCount
-
-print("Media library contains \(movieCount) movies and \(songCount) songs")
-
-// as? as!, 서브클래스(Movie, Song) 타입으로 다운캐스팅 형변환을 할 수 있음.
-// 다운캐스팅이 되면 접근이 가능해짐.
-for item in library {
-	if let movie = item as? Movie { // 조건부 형식 다운캐스팅
-		print("Movie: \(movie.name), dir. \(movie.director)")
-	} else if let song = item as? Song {
-		print("Song: \(song.name), by \(song.artist)")
-	}
-}
-
-// as! >> 항상 성공할 것이라고 예상 가능할 때만 사용.
-// 에러가 발생하면 run time error 로 프로그램 강제종료.
+guardTest(value: 2)
+guardTest(value: nil)
