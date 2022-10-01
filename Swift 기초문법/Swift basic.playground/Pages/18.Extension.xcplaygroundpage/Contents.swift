@@ -6,7 +6,7 @@ import Foundation
  }
  */
 
-// Int 에 기능 추가
+// Int형 값에 기능 추가
 extension Int {
 	// 짝수인지 확인하는 연산 프로퍼티 추가
 	var isEven: Bool {

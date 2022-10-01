@@ -1,7 +1,7 @@
 import Foundation
 
 // 오류처리를 위한 PhoneError 타입 선언
-enum PhoneError: Error {
+enum PhoneError: Error { // Error 프로토콜 채택
 	case unknown
 	case batteryLow(batteryLevel: Int) // 배터리가 몇퍼 남았는지 알려주기 위해 연관값 추가
 }
@@ -11,14 +11,17 @@ enum PhoneError: Error {
 
 // 1. 함수에서 발생한 오류를 해당함수를 호출한 코드에 전파하는 방법
 // throws -> throwing 함수
-func checkPhoneBatteryStatus(batteryLevel: Int) throws -> String {
+func checkPhoneBatteryStatus(batteryLevel: Int) throws -> String { // 반환값 지정 (String)
+	// guard -> false 일때 else문이 실행되고 함수 종료.
 	guard batteryLevel != -1 else { throw PhoneError.unknown }
-	guard batteryLevel > 20 else { throw PhoneError.batteryLow(batteryLevel: 20)}
+	guard batteryLevel > 20 else { throw
+		PhoneError.batteryLow(batteryLevel: 20)}
 	
 	return "배터리 상태가 정상입니다."
 }
 
 /*
+ 2. do - catch
  do {
 	try 오류 발생 가능 코드
  } catch 오류 패턴 {
@@ -37,13 +40,16 @@ do {
 }
 
 
-// 2. try? 를 사용하면 오류를 옵셔널 값으로 변환하여 처리할 수 있음.
+// 3. try? 를 사용하면 오류를 옵셔널 값으로 변환하여 처리할 수 있음.
+// try? 값이 에러를 발생시키면 리턴값은 nill
 let status = try? checkPhoneBatteryStatus(batteryLevel: 30)
-print(status) // Optional()
+print(status) // Optional() - Optional("배터리 상태가 정상입니다.")
 
-// 3. try! throwing 메서드가 에러를 던져주지 않을 것을 확신할 때 사용.
-let status2 = try! checkPhoneBatteryStatus(batteryLevel: 30) // -1 -> 에러 발생
-print(status2)
+// 4. try! throwing 메서드가 에러를 던져주지 않을 것을 확신할 때 사용.
+// -1 -> run time error
+let status2 = try! checkPhoneBatteryStatus(batteryLevel: 30)
+print(status2) // 배터리 상태가 정상입니다.
+
 
 
 

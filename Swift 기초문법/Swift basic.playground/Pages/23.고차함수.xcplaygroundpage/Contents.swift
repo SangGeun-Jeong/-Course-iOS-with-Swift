@@ -18,7 +18,7 @@ print("filter \(filterArray)")
 // 컨테이너 내부의 수를 하나로 통합.
 // reduce(초기값)
 let someArray = [1,2,3,4,5]
-let reduceResult = someArray.reduce(0) {
+let reduceResult = someArray.reduce(0) { // 초기값 0
 	(result: Int, element: Int) -> Int in
 	print("\(result) + \(element)")
 	return result + element

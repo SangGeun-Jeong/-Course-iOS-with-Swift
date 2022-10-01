@@ -56,9 +56,9 @@ func doSomething2(success: () -> (), fail: () -> ()) {
 }
 
 doSomething2 {
-	<#code#>
+	
 } fail: {
-	<#code#>
+	
 }
 
 // 클로저 표현 단순화
@@ -72,12 +72,12 @@ doSomething3(closure: { (a, b, c) in
 })
 
 doSomething3(closure: {
-	// 약식 이름으로 대체 $
+	// 약식 인수 이름으로 매개변수 이름 대체 $
 	return $0 + $1 + $2
 })
 
 doSomething3(closure: {
-	// 단일리턴이라서 return 생략
+	// 단일 리턴이라서 return 생략
 	$0 + $1 + $2
 })
 
@@ -86,7 +86,7 @@ doSomething3() {
 	$0 + $1 + $2
 }
 
-// 하나의 매개변수이므로 소괄호 생략
+// 단 하나의 클로저만 매개변수로 전달하는 경우, 소괄호 생략
 doSomething3 {
 	$0 + $1 + $2
 }

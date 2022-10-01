@@ -1,7 +1,7 @@
 import Foundation
 
 // 연관된 항목을 모아줌.
-enum CompassPoint: String {
+enum CompassPoint: String { // 이름 대문자로 시작
 	case north = "북" // 원시값으로 초기화
 	case south = "남"
 	case east = "동"
@@ -15,7 +15,7 @@ enum CompassPoint: String {
 // 따라서 네이밍은 대문자로 시작.
 
 var direction = CompassPoint.east
-direction = .west
+direction = .west // dircetcion의 값을 siwft가 추론.
 direction
 
 // switch 구문과 사용하면 다양하게 사용 가능.

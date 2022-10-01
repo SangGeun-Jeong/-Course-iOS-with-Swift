@@ -9,21 +9,21 @@
         <page name='10.클래스'/>
         <page name='11.초기화 구문'/>
         <page name='12.프로퍼티'/>
-        <page name='클래스와 구조체의 차이'/>
-        <page name='상속'/>
-        <page name='타입 캐스팅'/>
-        <page name='Assert &amp; Guard'/>
-        <page name='Protocal'/>
-        <page name='Extension'/>
-        <page name='열거형'/>
-        <page name='옵셔널 체이닝'/>
-        <page name='try-catch'/>
-        <page name='클로저'/>
-        <page name='고차함수'/>
+        <page name='17.Protocal'/>
+        <page name='18.Extension'/>
+        <page name='19.열거형'/>
+        <page name='20.옵셔널 체이닝'/>
+        <page name='21.try-catch'/>
+        <page name='22.클로저'/>
+        <page name='23.고차함수'/>
         <page name='01.상수와 변수'/>
         <page name='02.기본 데이터 타입'/>
         <page name='TestPage'/>
         <page name='06.반복문'/>
+        <page name='13.클래스와 구조체의 차이'/>
+        <page name='14.상속'/>
+        <page name='15.타입 캐스팅'/>
+        <page name='16.Assert_Guard'/>
         <page name='03.컬렉션 타입'/>
     </pages>
 </playground>
