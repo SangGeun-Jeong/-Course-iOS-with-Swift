@@ -15,12 +15,7 @@
 - 프로토콜, 익스텐션, 열거형, 옵셔널 체이닝
 - try-catch, 클로저, 고차함수
 
-
-
 ## ch 02. Welcome, iOS World
 
 - 시뮬레이터, Example Project App 실행 실습
 - Xcode 둘러보기
-
-
-
